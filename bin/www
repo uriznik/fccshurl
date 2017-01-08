@@ -18,9 +18,8 @@ app.set('port', port);
 var hostname = 'localhost';
 if(app.get('env') === 'production') {
   hostname = process.env.HEROKU_APP_NAME || 'fccshurl.herokuapp.com';
-}
-if (port) {
-	hostname += ':' + port;
+} else {
+  hostname += (port ? ':' + port : '');
 }
 app.set('hostport', hostname);
 
