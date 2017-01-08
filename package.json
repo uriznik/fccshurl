@@ -26,6 +26,6 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "jade": "~1.11.0",
-    "serve-favicon": "@latest"
+    "serve-favicon": "latest"
   }
 }
