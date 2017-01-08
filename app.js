@@ -53,8 +53,14 @@ app.use(function(err, req, res, next) {
 });
 
 /* Connect to database */
-var mongoUrl = "mongodb://localhost:27017/fccshurl";
-
+var mongoUrl = process.env.MONGOLAB_URI || "mongodb://localhost:27017/fccshurl";
+/*
+if (app.get('env') === 'development') {
+  mongoUrl = "";
+} else {
+  mongoUrl = process.env.MONGOLAB_URI;
+}
+*/
 MongoClient.connect(mongoUrl, function(err, db) {
   assert.equal(null, err);
   app.set('mongoDB', db);
