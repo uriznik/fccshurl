@@ -6,3 +6,8 @@ body {
 a {
   color: #00B7FF;
 }
+
+code {
+  color: #E00020;
+  background-color: #F0F0F0;
+}

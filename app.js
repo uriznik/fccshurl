@@ -10,7 +10,7 @@ var MongoClient = require('mongodb').MongoClient,
     assert      = require('assert');
 
 var index = require('./routes/index');
-var post  = require('./routes/post');
+var createNew  = require('./routes/createNew');
 
 var app = express();
 
@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Bind main routes
 app.use('/', index);
-app.use('/shorten', post);
+app.use('/new', createNew);
 
 
 // catch 404 and forward to error handler

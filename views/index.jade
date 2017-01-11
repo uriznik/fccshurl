@@ -1,9 +1,9 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  form(method="post" action="shorten")
-    input(name="url")
-
-
+  div(class=container)
+    h1= title
+    p Welcome to #{title}
+    p Create a short URL by making a request to /new - 
+      code https://fccshurl.herokuapp.com/new/https://google.com
+    
