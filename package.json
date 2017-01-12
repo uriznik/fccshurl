@@ -27,6 +27,7 @@
     "debug": "~2.2.0",
     "jade": "~1.11.0",
     "serve-favicon": "latest",
-    "morgan": "latest"
+    "morgan": "latest",
+    "valid-url": "latest"
   }
 }

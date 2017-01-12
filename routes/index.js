@@ -6,9 +6,13 @@ router.get('/:key', function(req, res, next) {
   if (req.baseUrl !== '') {
     return next();
   }
-  var db = req.app.get('mongoDB');
 
+  var db = req.app.get('mongoDB');
   var key = req.params.key;
+
+  if (key.indexOf('.') >= 0) {
+    return next();
+  }
 
   shorten.fetch(db, key,
     function(url) {
@@ -18,7 +22,7 @@ router.get('/:key', function(req, res, next) {
         res.end();
       } else {
 	res.status(400);
-	res.end();
+	res.send({error: 'No such URL'});
       }
     });
 });
